@@ -61,6 +61,12 @@ int main(void){
         	else if (menu == 6){
             		searchProduct(list, index);
         	}
+		else if (menu == 7){
+            		searchDelivery(list, index);
+        	}
+        	else if (menu == 8){
+        	    	searchPrice(list, index);
+        	}
     	}
     	printf("종료됨!\n");
     	return 0;
