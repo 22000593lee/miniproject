@@ -72,3 +72,48 @@ void searchProduct(Product *p, int count) {
     if(scnt == 0) printf("=> 검색된 데이터 없음!");
     printf("\n");
 }
+
+void searchDelivery(Product *p, int count) {
+    int scnt = 0;
+    int type;
+
+    printf("검색할 배송유형? ");
+    scanf("%d", &type);
+
+    printf("\n================================\n");
+    for(int i=0 ; i<count ; i++) {
+        if(p[i].price == -1) continue;
+        if(type == p[i].d_type) {
+            printf("(%d)", i+1);
+            readProduct(p[i]);
+            scnt++;
+            printf("================================\n");
+        }
+    }
+    if(scnt == 0) printf("=> 검색된 데이터 없음!");
+    printf("\n");
+}
+
+void searchPrice(Product *p, int count) {
+    int scnt = 0;
+    int max;
+    int min;
+
+    printf("최대 가격은? ");
+    scanf("%d", &max);
+    printf("최소 가격은? ");
+    scanf("%d", &min);
+
+    printf("\n================================\n");
+    for(int i=0 ; i<count ; i++) {
+        if(p[i].price == -1) continue;
+        if(p[i].price >= min && p[i].price <= max) {
+            printf("(%d)", i+1);
+            readProduct(p[i]);
+            scnt++;
+            printf("================================\n");
+        }
+    }
+    if(scnt == 0) printf("=> 검색된 데이터 없음!");
+    printf("\n");
+}
